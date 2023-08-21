@@ -31,7 +31,8 @@ git merge devs {{branch}}
 // commit 2
 git push origin {{branch}}
 ```
-Chaque soir (18h), le Lead Dev fusionnera toutes les differentes branches au sein de la branche **devs** et testera en locale. Si tout est ok, les travaux seront mis sur la branche principale (main) pour déploiement 
+Une fois le push fait, le développeur devra faire une **pull request** sur GitHub afin qu'on puisse fusionner ses travaux.
+Chaque soir (18h), le Lead Dev fusionnera toutes les differentes branches ayant soumis des *pull request* au sein de la branche **devs** et testera en locale. Si tout est ok, les travaux seront mis sur la branche principale (main) pour déploiement 
 
 ## Guide de développement
 LES REGLES SUIVANTES DOIVENT SCRUPULEUSEMENT ETRE RESPECTEES
