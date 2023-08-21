@@ -6,11 +6,32 @@ Ce dépôt est destiné à accueillir le code source de l'application de gestion
 * Superviseur: Mr Aboubakar Bouba
 * Intégrateur (Lead Dev): Dimitri Sitchet
 * Développeurs
-    *  Cherif
+    * Cherif
     * Jerry
+	* Lorene
    
 ## Stack
-Ce projet est développé avec le framework Spring Boot 3.1 et utilise une base de données MySql
+Ce projet est développé avec le framework Spring Boot 3.1, utilise Thymeleaf comme moteur de template et tourne sur une base de données MySql
+
+## Installation
+Commencez par cloner le projet sur votre PC
+```bash
+git clone https://github.com/mr-about-team/sygen.git
+```
+Rendez-vous sur la branche correspondant à votre module (exemple: `git checkout -b corrections`)
+**Vous ne ferez des commits et push que sur votre branche**
+
+## Cycle de développement
+Avant de commencer à travailler, chacun doit se rassurer au préalable d'avoir récupérer les travaux de ses collaborateurs afin que toute l'équipe ai la même base de code. De ce fait, le workflow quotidien doit être le suivant
+```bash
+git checkout {{branch}} // branch est votre branche
+git pull origin devs
+git merge devs {{branch}}
+// commit 1
+// commit 2
+git push origin {{branch}}
+```
+Chaque soir (18h), le Lead Dev fusionnera toutes les differentes branches au sein de la branche **devs** et testera en locale. Si tout est ok, les travaux seront mis sur la branche principale (main) pour déploiement 
 
 ## Guide de développement
 LES REGLES SUIVANTES DOIVENT SCRUPULEUSEMENT ETRE RESPECTEES
