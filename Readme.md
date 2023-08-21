@@ -31,7 +31,8 @@ git merge devs {{branch}}
 // commit 2
 git push origin {{branch}}
 ```
-Chaque soir (18h), le Lead Dev fusionnera toutes les differentes branches au sein de la branche **devs** et testera en locale. Si tout est ok, les travaux seront mis sur la branche principale (main) pour déploiement 
+Une fois le push fait, le développeur devra faire une **pull request** sur GitHub afin qu'on puisse fusionner ses travaux.
+Chaque soir (18h), le Lead Dev fusionnera toutes les differentes branches ayant soumis des *pull request* au sein de la branche **devs** et testera en locale. Si tout est ok, les travaux seront mis sur la branche principale (main) pour déploiement 
 
 ## Guide de développement
 LES REGLES SUIVANTES DOIVENT SCRUPULEUSEMENT ETRE RESPECTEES
@@ -39,13 +40,14 @@ LES REGLES SUIVANTES DOIVENT SCRUPULEUSEMENT ETRE RESPECTEES
 1. Chaque responsable de module doit créer une branche correspondant à son module pour effectuer son travail.
 Par exemple, Jerry qui s'occupe des délibération doit avoir une branche **deliberation** dans laquelle il fera ses modifications en rapport avec son module  `git checkout -b deliberation`
 2. Aucun push ne doit être fait sur la branche principale. Les différents développeurs devront faire des push sur leurs branches et faire une **pull request** sur la branche **dev**  
-3. Les commits doivent être fait avec la syntaxe suivante **{{badge}}: description**. La description du badge doivent être précise et en rapport avec l'action effectuée. {{badge}} est un terme générique qui peut avoir les valeurs suivantes:
+3. Les commits sur un nombre important de fichiers sont proscits. Ils doivent être ponctuels et spécifique à une activité précise. Par ailleurs les commits doivent être fait avec la syntaxe suivante **{{badge}}: description**. La description du badge doivent être précise et en rapport avec l'action effectuée. {{badge}} est un terme générique qui peut avoir les valeurs suivantes:
 * **feat** : Utilisé lorsqu'une nouvelle fonctionnalité a été ajoutée
 * **fix** : Utilisé lorsqu'un bug a été corrigé
 * **patch** : Utilisé lorsqu'on a apporté une optimisation d'une fonction sans ajout de fonctionnalité ou correction de bug et sans que sa n'impacte sur le reste du code (lors du remplacement d'un if/else par une condition ternaire par exemple)
 * **chore** : Utilisé lorsque la structure globale d'un grand ensemble a été fortement modifiée
 * **cs-fix** : Utilisé lorsqu'on fait une correction du style de code (par exemple quand on change **ma_variable** par **maVariable**)
-* **docs**: Utilisé quand on fait une modification sur le guide d'utilisation (documentation). Un wiki sera créer sur ce dépôt de chaque responsable documentera chacune des fonctionnalités de son module
+* **docs**: Utilisé quand on fait une modification sur le guide d'utilisation (documentation). Un wiki sera créer sur ce dépôt de chaque responsable documentera chacune des fonctionnalités de son module.
+Vous pouvez vous referez à la page des commits (https://github.com/mr-about-team/sygen/commits/devs) pour avoir un aperçu 
 4. Les règles de codage suivantes doivent être respecter pour une meilleure intégration.
 * Le nom de classe doivent être en *pascal case* et doivent être sufixé de *Controller* c'est-à-dire **MaClasseController**
 * Le nom des propriétés et méthodes doivent être en *camel case* c'est-à-dire **maVariable** ou **maMethode**
