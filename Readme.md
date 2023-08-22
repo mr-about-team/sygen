@@ -10,7 +10,7 @@ Ce dépôt est destiné à accueillir le code source de l'application de gestion
     * Jerry
 	* Lorene
  	* Anna
-    *Balekamen  
+  * Balekamen  
    
 ## Stack
 Ce projet est développé avec le framework Spring Boot 3.1, utilise Thymeleaf comme moteur de template et tourne sur une base de données MySql
