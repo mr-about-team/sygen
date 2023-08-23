@@ -18,7 +18,7 @@ public class Participe
 	private Long id;
     private String matricule;
     private float note;
-    private String anonymat;
+    private int anonymat;
     private String nomEtudiant;
     private Date dateImportation;
     
@@ -48,10 +48,10 @@ public class Participe
 	public void setNote(float note) {
 		this.note = note;
 	}
-	public String getAnonymat() {
+	public int getAnonymat() {
 		return anonymat;
 	}
-	public void setAnonymat(String anonymat) {
+	public void setAnonymat(int anonymat) {
 		this.anonymat = anonymat;
 	}
 	public String getNomEtudiant() {
