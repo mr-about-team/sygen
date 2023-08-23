@@ -26,7 +26,6 @@ public class Etudiant
 	@Column(unique = true)
 	private String matricule;
 	private String nom;
-	private String prenom;
 	private Date dateNaiss;
 	private String lieuNaiss;
 	private Sexe sexe;
@@ -67,12 +66,6 @@ public class Etudiant
 	}
 	public void setNom(String nom) {
 		this.nom = nom;
-	}
-	public String getPrenom() {
-		return prenom;
-	}
-	public void setPrenom(String prenom) {
-		this.prenom = prenom;
 	}
 	public Date getDateNaiss() {
 		return dateNaiss;
