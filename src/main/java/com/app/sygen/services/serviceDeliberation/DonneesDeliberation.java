@@ -3,6 +3,7 @@ package com.app.sygen.services.serviceDeliberation;
  * Cette classe regroupe les donnees d'un etudiant qui 
  * permettent de dire si oui ou non il est deliberable.
  */
+
 public class DonneesDeliberation {
    private Float mgp;
    private Integer nbEchec;
