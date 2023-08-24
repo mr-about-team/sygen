@@ -9,7 +9,7 @@ public class CritereDeliberation{
     private Float pourcentageCapitalise;
     private Float mgpMax;
 
-    public critereDeliberation(Optional<Float>mgpMin, Optional<Float>mgpMax, Optional<Integer>nbEchecSem, Optional<Float>pourcentageCapitalise){
+    public CritereDeliberation(Optional<Float>mgpMin, Optional<Float>mgpMax, Optional<Integer>nbEchecSem, Optional<Float>pourcentageCapitalise){
         
             this.nbEchecSem = nbEchecSem.orElse(null);
             this.mgpMin = mgpMin.orElse(null);
