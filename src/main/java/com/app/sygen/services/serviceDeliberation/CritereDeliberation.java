@@ -9,7 +9,7 @@ public class CritereDeliberation{
     private Float pourcentageCapitalise;
     private Float mgpMax;
 
-    public CritereDeliberation(Optional<Float>mgpMin, Optional<Float>mgpMax, Optional<Integer>nbEchecSem, Optional<Float>pourcentageCapitalise){
+    public critereDeliberation(Optional<Float>mgpMin, Optional<Float>mgpMax, Optional<Integer>nbEchecSem, Optional<Float>pourcentageCapitalise){
         
             this.nbEchecSem = nbEchecSem.orElse(null);
             this.mgpMin = mgpMin.orElse(null);
@@ -17,7 +17,7 @@ public class CritereDeliberation{
             this.pourcentageCapitalise = pourcentageCapitalise.orElse(null);
     }  
 
-    public Boolean EstDeliberable(DonneesDeliberation data){
+    public Boolean estDeliberable(DonneesDeliberation data){
 
         Boolean deliberable = true;
 

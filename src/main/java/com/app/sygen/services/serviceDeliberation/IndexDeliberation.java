@@ -17,16 +17,13 @@ import jakarta.transaction.Transactional;
 public class IndexDeliberation{
 
     @Autowired
-    EtudiantRepository etudiantrepo;
-    @Autowired
-    PvDeliberationRepository pvdelibrepo;
-    @Autowired
-    DetailsPvUeRepository detpvuerepol;
+    EtudiantRepository etudiantRepository;
+   
     
-    public void Deliberation(List<CritereDeliberation> blocCriteres, Long filiere){
-        List<Etudiant> etudiantsDeFilNiv  =  etudiantrepo.findByFiliere(filiere);
+    public void deliberation(List<CritereDeliberation> blocCriteres, Long filiere){
+        List<Etudiant> etudiantsDeFiliere  =  etudiantRepository.findByFiliere(filiere);
       
-        for(Etudiant etudiant : etudiantsDeFilNiv){
+        for(Etudiant etudiant : etudiantsDeFiliere){
 
             for(CritereDeliberation critere : blocCriteres){
 
