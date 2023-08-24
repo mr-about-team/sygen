@@ -132,7 +132,6 @@ public class EtudiantService
         	
         	etudiant.setMatricule(matricule);
         	etudiant.setNom(nom);
-        	etudiant.setPrenom(prenom);
         	etudiant.setDateNaiss(dateNaiss);
         	etudiant.setLieuNaiss(lieuNaiss);
         	etudiant.setSexe(Sexe.valueOf(sexe.toUpperCase()));
@@ -213,7 +212,6 @@ public class EtudiantService
             Etudiant etudiant= new Etudiant();
             etudiant.setMatricule(matricule);
             etudiant.setNom(nom);
-            etudiant.setPrenom(prenom);
             etudiant.setDateNaiss(dateNaiss);
             etudiant.setLieuNaiss(lieuNaiss);
             etudiant.setSexe(Sexe.valueOf(sexe));
@@ -258,14 +256,13 @@ public class EtudiantService
         Row headerRow = sheet.createRow(0);
         headerRow.createCell(0).setCellValue("numero");
         headerRow.createCell(1).setCellValue("Matricule");
-        headerRow.createCell(2).setCellValue("Nom");
-        headerRow.createCell(3).setCellValue("Prénom");
-        headerRow.createCell(4).setCellValue("Date Naissance");
-        headerRow.createCell(5).setCellValue("Lieu Naissance");
-        headerRow.createCell(6).setCellValue("Sexe");
-        headerRow.createCell(7).setCellValue("Telephone");
-        headerRow.createCell(8).setCellValue("email");
-        headerRow.createCell(9).setCellValue("Adresse");
+        headerRow.createCell(2).setCellValue("Nom et prenom");
+        headerRow.createCell(3).setCellValue("Date Naissance");
+        headerRow.createCell(4).setCellValue("Lieu Naissance");
+        headerRow.createCell(5).setCellValue("Sexe");
+        headerRow.createCell(6).setCellValue("Telephone");
+        headerRow.createCell(7).setCellValue("email");
+        headerRow.createCell(8).setCellValue("Adresse");
         headerRow.createCell(9).setCellValue("code Filiere");
         headerRow.createCell(10).setCellValue("Diplome En Entree");
 
@@ -276,15 +273,14 @@ public class EtudiantService
             row.createCell(0).setCellValue(etudiant.getId());
             row.createCell(1).setCellValue(etudiant.getMatricule());
             row.createCell(2).setCellValue(etudiant.getNom());
-            row.createCell(3).setCellValue(etudiant.getPrenom());
-            row.createCell(4).setCellValue(etudiant.getDateNaiss());
-            row.createCell(5).setCellValue(etudiant.getLieuNaiss());
-            row.createCell(6).setCellValue(etudiant.getSexe().value());
-            row.createCell(7).setCellValue(etudiant.getTelephone());
-            row.createCell(8).setCellValue(etudiant.getEmail());
-            row.createCell(9).setCellValue(etudiant.getAdresse());
-            row.createCell(10).setCellValue(etudiant.getFiliere().getCode());
-            row.createCell(11).setCellValue(etudiant.getDiplomeEnEntree());
+            row.createCell(3).setCellValue(etudiant.getDateNaiss());
+            row.createCell(4).setCellValue(etudiant.getLieuNaiss());
+            row.createCell(5).setCellValue(etudiant.getSexe().value());
+            row.createCell(6).setCellValue(etudiant.getTelephone());
+            row.createCell(7).setCellValue(etudiant.getEmail());
+            row.createCell(8).setCellValue(etudiant.getAdresse());
+            row.createCell(9).setCellValue(etudiant.getFiliere().getCode());
+            row.createCell(10).setCellValue(etudiant.getDiplomeEnEntree());
         }
 
         // Écrire le classeur Excel dans un fichier
