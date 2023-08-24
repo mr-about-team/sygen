@@ -16,6 +16,7 @@ Ce dépôt est destiné à accueillir le code source de l'application de gestion
 Ce projet est développé avec le framework Spring Boot 3.1, utilise Thymeleaf comme moteur de template et tourne sur une base de données MySql
 
 ## Installation
+git checkout {{branch}}
 Commencez par cloner le projet sur votre PC
 ```bash
 git clone https://github.com/mr-about-team/sygen.git
