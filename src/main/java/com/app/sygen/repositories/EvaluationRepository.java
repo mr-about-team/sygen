@@ -7,8 +7,11 @@ import org.springframework.stereotype.Repository;
 
 import com.app.sygen.entities.Evaluation;
 import com.app.sygen.entities.Ue;
+<<<<<<< HEAD
+=======
 
-@Repository
+>>>>>>> a37235f (production de pv cc, tp et ue)
+
 public interface EvaluationRepository extends AppRepository<Evaluation, Long>
 {
 	/**
@@ -20,9 +23,13 @@ public interface EvaluationRepository extends AppRepository<Evaluation, Long>
 	 * Recupere une evaluation d'un type pour une UE 
 	 */
 	Evaluation findByTypeEvalAndUe_Code(String typeEval, String code);
+<<<<<<< HEAD
 
 	@Query("SELECT e FROM Evaluation e WHERE e.ue IN :ue")
 	List <Evaluation>  findByUe(List<Ue> ue);
 
+=======
+	Evaluation findByTypeEvalAndUe(String typeEval, Ue ue);
+>>>>>>> a37235f (production de pv cc, tp et ue)
 
 }

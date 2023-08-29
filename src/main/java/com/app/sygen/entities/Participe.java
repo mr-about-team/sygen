@@ -21,9 +21,16 @@ public class Participe
     private int anonymat;
     private String nomEtudiant;
     private Date dateImportation;
+<<<<<<< HEAD
     
     @ManyToOne 
     private Users user;
+=======
+    private String anneeImportation;
+	
+    @ManyToOne
+    private User user;
+>>>>>>> a37235f (production de pv cc, tp et ue)
     @ManyToOne
     private Evaluation evaluation;
     @ManyToOne
@@ -83,5 +90,11 @@ public class Participe
 	}
 	public void setEtudiant(Etudiant etudiant) {
 		this.etudiant = etudiant;
+	}
+	public String getAnneeImportation() {
+		return anneeImportation;
+	}
+	public void setAnneeImportation(String anneeImportation) {
+		this.anneeImportation = anneeImportation;
 	}
 }
