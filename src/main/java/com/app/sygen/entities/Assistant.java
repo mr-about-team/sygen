@@ -11,7 +11,7 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "assistants")
+//@Table(name = "assistants")
 public class Assistant 
 {
     @Id
@@ -19,7 +19,7 @@ public class Assistant
     private long id;
 
     @ManyToOne
-    private User user;
+    private Users user;
     @ManyToMany
     private List<Action> actions;
 	
@@ -30,10 +30,10 @@ public class Assistant
 	public void setId(long id) {
 		this.id = id;
 	}
-	public User getUser() {
+	public Users getUser() {
 		return user;
 	}
-	public void setUser(User user) {
+	public void setUser(Users user) {
 		this.user = user;
 	}
 	public List<Action> getActions() {
