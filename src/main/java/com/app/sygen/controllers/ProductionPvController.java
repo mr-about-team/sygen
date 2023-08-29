@@ -45,29 +45,5 @@ public class ProductionPvController {
         return productionPvService.makePdfUe("sn", ueRepository.findByCode("inf-242"), "inf-l3", "inf-l3");
     }
 
-    @GetMapping(path = "test")
-    public String SaveData(){
-        Paiement paiement = new Paiement();
-        
-        // Etudiant etudiant = new Etudiant();
-        // etudiant.setAdresse("Mballa 2");
-        // etudiant.setDateNaiss(null);
-        // etudiant.setFiliere(filiereRepository.findByCode("inf-l3"));
-        // etudiant.setMatricule("21t2167");
-        // etudiant.setNom("Moise");
-        // etudiant.setStatutPaiement(50000.0);
-        // etudiantRepository.save(etudiant);
-
-        // Participe participe = new Participe();
-        // participe.setAnneeImportation(LocalDate.now().getYear()+"");
-        // participe.setAnonymat(123);
-        // participe.setEtudiant(etudiantRepository.findByMatricule("21t2660"));
-        // participe.setEvaluation(evaluationRepository.findByTypeEvalAndUe("sn", ueRepository.findByCode("inf-242")));
-        // participe.setNote(45);
-        // participe.setNomEtudiant(etudiantRepository.findByMatricule("21t2660").getNom());
-        // participe.setMatricule(etudiantRepository.findByMatricule("21t2660").getMatricule());
-        // participeRepository.save(participe);
-        return "ok";
-    }
     
 }
