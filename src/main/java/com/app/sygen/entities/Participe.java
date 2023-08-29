@@ -29,8 +29,12 @@ public class Participe
     private String anneeImportation;
 	
     @ManyToOne
+<<<<<<< HEAD
     private User user;
 >>>>>>> a37235f (production de pv cc, tp et ue)
+=======
+    private Users users;
+>>>>>>> 9afc213 (foction d'importation des notes)
     @ManyToOne
     private Evaluation evaluation;
     @ManyToOne
@@ -73,11 +77,19 @@ public class Participe
 	public void setDateImportation(Date dateImportation) {
 		this.dateImportation = dateImportation;
 	}
+<<<<<<< HEAD
 	public Users getUser() {
 		return user;
 	}
 	public void setUser(Users user) {
 		this.user = user;
+=======
+	public Users getUsers() {
+		return users;
+	}
+	public void setUsers(Users users) {
+		this.users = users;
+>>>>>>> 9afc213 (foction d'importation des notes)
 	}
 	public Evaluation getEvaluation() {
 		return evaluation;
