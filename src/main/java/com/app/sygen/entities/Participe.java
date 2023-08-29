@@ -21,7 +21,8 @@ public class Participe
     private int anonymat;
     private String nomEtudiant;
     private Date dateImportation;
-    
+    private String anneeImportation;
+	
     @ManyToOne
     private User user;
     @ManyToOne
@@ -83,5 +84,11 @@ public class Participe
 	}
 	public void setEtudiant(Etudiant etudiant) {
 		this.etudiant = etudiant;
+	}
+	public String getAnneeImportation() {
+		return anneeImportation;
+	}
+	public void setAnneeImportation(String anneeImportation) {
+		this.anneeImportation = anneeImportation;
 	}
 }
