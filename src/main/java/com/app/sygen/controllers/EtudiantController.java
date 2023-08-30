@@ -1,6 +1,5 @@
 package com.app.sygen.controllers;
 
-import java.net.URLEncoder;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,21 +13,13 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.springframework.web.servlet.view.RedirectView;
 
 import com.app.sygen.entities.Etudiant;
-import com.app.sygen.repositories.EtudiantRepository;
-import com.app.sygen.repositories.FiliereRepository;
 import com.app.sygen.services.EtudiantService;
-
 @Controller
 @RequestMapping("/etudiant")
 public class EtudiantController 
 {
 	@Autowired
     private EtudiantService etudiantService;
-    @Autowired
-    private FiliereRepository filiereRepository;
-    @Autowired
-    private EtudiantRepository etudiantRepository;
-
    
     @GetMapping("/")
     public String index(Model model)

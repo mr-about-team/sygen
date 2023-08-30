@@ -132,7 +132,6 @@ public class EtudiantService
         	
         	etudiant.setMatricule(matricule);
         	etudiant.setNom(nom);
-        	etudiant.setPrenom(prenom);
         	etudiant.setDateNaiss(dateNaiss);
         	etudiant.setLieuNaiss(lieuNaiss);
         	etudiant.setSexe(Sexe.valueOf(sexe.toUpperCase()));
@@ -213,7 +212,6 @@ public class EtudiantService
             Etudiant etudiant= new Etudiant();
             etudiant.setMatricule(matricule);
             etudiant.setNom(nom);
-            etudiant.setPrenom(prenom);
             etudiant.setDateNaiss(dateNaiss);
             etudiant.setLieuNaiss(lieuNaiss);
             etudiant.setSexe(Sexe.valueOf(sexe));
@@ -275,15 +273,14 @@ public class EtudiantService
             row.createCell(0).setCellValue(etudiant.getId());
             row.createCell(1).setCellValue(etudiant.getMatricule());
             row.createCell(2).setCellValue(etudiant.getNom());
-            row.createCell(3).setCellValue(etudiant.getPrenom());
-            row.createCell(4).setCellValue(etudiant.getDateNaiss());
-            row.createCell(5).setCellValue(etudiant.getLieuNaiss());
-            row.createCell(6).setCellValue(etudiant.getSexe().value());
-            row.createCell(7).setCellValue(etudiant.getTelephone());
-            row.createCell(8).setCellValue(etudiant.getEmail());
-            row.createCell(9).setCellValue(etudiant.getAdresse());
-            row.createCell(10).setCellValue(etudiant.getFiliere().getCode());
-            row.createCell(11).setCellValue(etudiant.getDiplomeEnEntree());
+            row.createCell(3).setCellValue(etudiant.getDateNaiss());
+            row.createCell(4).setCellValue(etudiant.getLieuNaiss());
+            row.createCell(5).setCellValue(etudiant.getSexe().value());
+            row.createCell(6).setCellValue(etudiant.getTelephone());
+            row.createCell(7).setCellValue(etudiant.getEmail());
+            row.createCell(8).setCellValue(etudiant.getAdresse());
+            row.createCell(9).setCellValue(etudiant.getFiliere().getCode());
+            row.createCell(10).setCellValue(etudiant.getDiplomeEnEntree());
         }
 
         // Écrire le classeur Excel dans un fichier

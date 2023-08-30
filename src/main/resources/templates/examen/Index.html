@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title> page </title>
+        <link rel="stylesheet" type="text/css" th:href="@{/webjars/boostrap/css/boostrap.min.css}" />
+    </head>
+    <body>
+        <div class="container text-center"> 
+            <div> <h1> WELCOME TO APP </h1> </div>
+            
+	             <div class="p-2">  
+                    <a class="h2" th:href="@{/ue}"> List UE </a>
+                 </div>
+
+                 <div class="p-2">  
+                    <a class="h2" th:href="@{/ue/new}"> Create category </a>
+                 </div>
+
+                 <div class="p-2">  
+                    <a class="h2" th:href="@{/examen}"> List Exam </a>
+                 </div>
+
+                 <div class="p-2">  
+                    <a class="h2" th:href="@{/examen/new}"> Create Exam </a>
+
+                 </div>
+                 <div class="p-2">
+                    <a class="h2" th:href="@{/participe/new}"> etudiant</a>
+                 </div>
+
+
+        </div>
+    </body>
+</html>
+		

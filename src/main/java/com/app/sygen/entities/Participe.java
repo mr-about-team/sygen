@@ -19,7 +19,8 @@ public class Participe
 	private Long id;
     private String matricule;
     private float note;
-    private Integer anonymat;
+
+    private int anonymat;
     private String nomEtudiant;
     private Date dateImportation;
     
