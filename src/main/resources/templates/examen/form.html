@@ -10,7 +10,7 @@
         <div class="container text-center"> 
             <div th:if="${exams.id==null}"> <h1> create a new exam</h1> </div>
                 <div th:unless="${exams.id==null}"><h1> edit</h1> </div>
-            <form th:action="@{/exam/save}" th:object="${exams}" method="post" style="max-width:600px;margin:0 auto">
+            <form th:action="@{/examen/save}" th:object="${exams}" method="post" style="max-width:600px;margin:0 auto">
                 <input type="hidden" th:field="*{id}" th:value="${exams.id}" />
             <div class="m-3">
                 <div class= "form-group row">

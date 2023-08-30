@@ -6,6 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.app.sygen.entities.Ue;
 import com.app.sygen.repositories.UeRepository;
@@ -15,28 +16,30 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 @Controller
-public class UeController {
+@RequestMapping("/ue")
+public class UeController 
+{
     @Autowired
     private UeRepository repo;
 
-    @GetMapping("/ueList")
+    @GetMapping("/")
     public String listue(Model model){
         List<Ue> listue=repo.findAll();
         model.addAttribute("listue",listue);
-        return "/examen/ueList";
+        return "/ue/list";
     }
 
-    @GetMapping("/ueList/new")
+    @GetMapping("/new")
     public String shownewForm(Model model){
         model.addAttribute("category",new Ue());
 
-        return "/examen/ue_form";
+        return "/ue/form";
     }
-    @PostMapping("/ueList/save")
+    @PostMapping("/save")
         public String saveue(Ue category){
             repo.save(category);
 
-            return "redirect:/ueList";
+            return "redirect:/ue";
         }
 
     @ModelAttribute("credits")
@@ -45,6 +48,5 @@ public class UeController {
         credits.add(3);
         credits.add(6);
         return credits;
-    }
-    
+    }    
 }
