@@ -132,7 +132,7 @@ public class EtudiantService
         	
         	etudiant.setMatricule(matricule);
         	etudiant.setNom(nom);
-        	etudiant.setPrenom(prenom);
+        	// etudiant.setPrenom(prenom);
         	etudiant.setDateNaiss(dateNaiss);
         	etudiant.setLieuNaiss(lieuNaiss);
         	etudiant.setSexe(Sexe.valueOf(sexe.toUpperCase()));
@@ -213,7 +213,7 @@ public class EtudiantService
             Etudiant etudiant= new Etudiant();
             etudiant.setMatricule(matricule);
             etudiant.setNom(nom);
-            etudiant.setPrenom(prenom);
+            // etudiant.setPrenom(prenom);
             etudiant.setDateNaiss(dateNaiss);
             etudiant.setLieuNaiss(lieuNaiss);
             etudiant.setSexe(Sexe.valueOf(sexe));
@@ -249,13 +249,13 @@ public class EtudiantService
         List<Etudiant> etudiants = etudiantRepository.findAll();
 
         // Créer un nouveau classeur Excel
-        Workbook workbook = new XSSFWorkbook();
+         Workbook workbook = new XSSFWorkbook();
 
         // Créer une feuille de calcul
-        Sheet sheet = workbook.createSheet("person");
+         Sheet sheet = workbook.createSheet("person");
 
         // Créer une ligne pour les en-têtes de colonne
-        Row headerRow = sheet.createRow(0);
+         Row headerRow = sheet.createRow(0);
         headerRow.createCell(0).setCellValue("numero");
         headerRow.createCell(1).setCellValue("Matricule");
         headerRow.createCell(2).setCellValue("Nom");
@@ -276,7 +276,7 @@ public class EtudiantService
             row.createCell(0).setCellValue(etudiant.getId());
             row.createCell(1).setCellValue(etudiant.getMatricule());
             row.createCell(2).setCellValue(etudiant.getNom());
-            row.createCell(3).setCellValue(etudiant.getPrenom());
+            // row.createCell(3).setCellValue(etudiant.getPrenom());
             row.createCell(4).setCellValue(etudiant.getDateNaiss());
             row.createCell(5).setCellValue(etudiant.getLieuNaiss());
             row.createCell(6).setCellValue(etudiant.getSexe().value());
@@ -289,7 +289,7 @@ public class EtudiantService
 
         // Écrire le classeur Excel dans un fichier
         try (OutputStream fileOut = outputStream) {
-            workbook.write(fileOut);
+             workbook.write(fileOut);
         }
 
         // Fermer le classeur Excel
