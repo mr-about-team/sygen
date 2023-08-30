@@ -14,8 +14,6 @@ import org.springframework.web.servlet.view.RedirectView;
 
 import com.app.sygen.entities.Etudiant;
 import com.app.sygen.services.EtudiantService;
-
-
 @Controller
 @RequestMapping("/etudiant")
 public class EtudiantController 

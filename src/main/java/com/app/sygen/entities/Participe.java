@@ -2,6 +2,7 @@ package com.app.sygen.entities;
 
 import java.sql.Date;
 
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -18,6 +19,7 @@ public class Participe
 	private Long id;
     private String matricule;
     private float note;
+
     private int anonymat;
     private String nomEtudiant;
     private Date dateImportation;
@@ -25,7 +27,7 @@ public class Participe
     @ManyToOne
     private User user;
     @ManyToOne
-    private Evaluation evaluation;
+	public Evaluation evaluation;
     @ManyToOne
     private Etudiant etudiant;
 	
@@ -42,10 +44,10 @@ public class Participe
 	public void setMatricule(String matricule) {
 		this.matricule = matricule;
 	}
-	public float getNote() {
+	public Float getNote() {
 		return note;
 	}
-	public void setNote(float note) {
+	public void setNote(Float note) {
 		this.note = note;
 	}
 	public int getAnonymat() {

@@ -5,8 +5,9 @@ import java.util.List;
 import org.springframework.stereotype.Repository;
 
 import com.app.sygen.entities.Evaluation;
+import com.app.sygen.entities.Ue;
 
-@Repository
+
 public interface EvaluationRepository extends AppRepository<Evaluation, Long>
 {
 	/**
@@ -18,4 +19,8 @@ public interface EvaluationRepository extends AppRepository<Evaluation, Long>
 	 * Recupere une evaluation d'un type pour une UE 
 	 */
 	Evaluation findByTypeEvalAndUe_Code(String typeEval, String code);
+
+	Evaluation findByTypeEvalAndUe(String string, Ue findByCode);
+
+	
 }
