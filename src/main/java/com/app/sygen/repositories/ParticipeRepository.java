@@ -8,7 +8,6 @@ import com.app.sygen.entities.Etudiant;
 import com.app.sygen.entities.Evaluation;
 import com.app.sygen.entities.Participe;
 
-@Repository
 public interface ParticipeRepository extends AppRepository<Participe, Long>
 {
 	//  Participe findByMatricule(String matricule);
@@ -16,11 +15,17 @@ public interface ParticipeRepository extends AppRepository<Participe, Long>
 
     //  List<Participe> findByEtudiant(Etudiant etudiant);
 
-     List<Participe> findByEvaluation(Evaluation evaluation);
+            List<Participe> findByEvaluation(Evaluation evaluation);
 
-     Participe findByMatriculeAndEvaluationAndAnnee(String matricule, Evaluation evaluation , String annee);
+            Participe findByMatriculeAndEvaluationAndAnnee(String matricule, Object object , String annee);
+       
+            Participe findByMatriculeAndEvaluationAndAnneeAndNomEtudiant(String matricule, Object object, String annee, String nomEtudiant);
+       
+            List<Participe> findByMatriculeAndEvaluation_Ue_Code(String matricule, String evaluation_Ue_Code);
 
-     Participe findByMatriculeAndEvaluationAndAnneeAndNomEtudiant(String matricule, Evaluation evaluation, String annee, String nomEtudiant);
+            List<Participe> findByAnneeImportationAndEvaluationOrderByNomEtudiantAsc(String string,
+                    Object findByTypeEvalAndUe);
 
-     List<Participe> findByMatriculeAndEvaluation_Ue_Code(String matricule, String evaluation_Ue_Code);
+            List<Participe> findByEtudiantAndAnneeImportationAndEvaluationOrderByNomEtudiantAsc(Etudiant etudiant,
+                    String string, Evaluation findByTypeEvalAndUe);
 }

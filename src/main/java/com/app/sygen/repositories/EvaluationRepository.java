@@ -8,7 +8,6 @@ import com.app.sygen.entities.Evaluation;
 import com.app.sygen.entities.Ue;
 
 
-@Repository
 public interface EvaluationRepository extends AppRepository<Evaluation, Long>
 {
 	/**
@@ -21,5 +20,7 @@ public interface EvaluationRepository extends AppRepository<Evaluation, Long>
 	 */
 	Evaluation findByTypeEvalAndUe_Code(String typeEval, String code);
 
-	Evaluation findByTypeEvalAndUe(String typeEval, Ue ue);
+	Evaluation findByTypeEvalAndUe(String string, Ue findByCode);
+
+	
 }

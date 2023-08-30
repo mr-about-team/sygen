@@ -59,4 +59,11 @@ public class DetailPvUe
 	public void setPvDeliberations(List<PvDeliberation> pvDeliberations) {
 		this.pvDeliberations = pvDeliberations;
 	}
+	public DetailPvUe(float note, PvUe pvUe, Etudiant etudiant) {
+		this.note = note;
+		this.pvUe = pvUe;
+		this.etudiant = etudiant;
+	}
+
+
 }

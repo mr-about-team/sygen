@@ -18,12 +18,10 @@ public class Participe
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
     private String matricule;
-    private Float note ;
-    private int anonymat;
+    private float note;
+    private Integer anonymat;
     private String nomEtudiant;
     private Date dateImportation;
-	private String annee ;
-
     
     @ManyToOne
     private User user;
@@ -86,14 +84,5 @@ public class Participe
 	}
 	public void setEtudiant(Etudiant etudiant) {
 		this.etudiant = etudiant;
-	}
-
-	public String getAnnee(){
-		return annee ;
-	}
-
-	public void setAnnee(String annee){
-		this.annee = annee ;
-
 	}
 }
