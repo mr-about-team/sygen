@@ -13,6 +13,11 @@ public interface EtudiantRepository extends AppRepository<Etudiant, Long>
 	 * Recherche d'un etudiant a partir de son matricule
 	 */
 	Etudiant findByMatricule(String matricule);
+
+	/**
+	 * Recherche d'un etudiant a partir de son id
+	 */
+	// Etudiant findById(Long id);
 	
 	/**
 	 * Liste des etudiants d'une filiere
@@ -25,7 +30,7 @@ public interface EtudiantRepository extends AppRepository<Etudiant, Long>
 	 */
 	List<Etudiant> findByFiliere(Filiere filiere);
 
-    @Query(value = "SELECT SUM(p.Montant) FROM Paiement p WHERE p.etudiant.id = :idEtudiant", nativeQuery = true)
+    @Query(value = "SELECT SUM(p.Montant) FROM Paiements p JOIN p.etudiant e WHERE e.id = :idEtudiant", nativeQuery = true)
     Double showStatus(@Param("idEtudiant") Long idEtudiant);
 	List<Etudiant> findByFiliereAndStatutPaiementGreaterThanEqualOrderByNomAsc(Filiere filiere, Double statutPaiement);
 	List<Etudiant> findByFiliereAndStatutPaiementIgnoreCaseIsLessThanOrderByNomAsc(Filiere filiere, Double statutPaiement);

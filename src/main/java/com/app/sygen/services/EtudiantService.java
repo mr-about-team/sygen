@@ -31,6 +31,7 @@ import com.app.sygen.repositories.HistoriqueFiliereRepository;
 import com.app.sygen.repositories.HistoriquePaiementRepository;
 import com.app.sygen.repositories.PaiementRepository;
 
+import jakarta.persistence.EntityNotFoundException;
 import jakarta.transaction.Transactional;
 
 @Service
@@ -78,8 +79,12 @@ public class EtudiantService
         
         List<Etudiant> etudiants = etudiantRepository.findAll();
         for(Etudiant etudiant : etudiants) {
-            montant = etudiantRepository.showStatus(etudiant.getId());
-            etudiant.setStatutPaiement(montant);
+            List<Paiement> paiements = paiementRepository.findByEtudiant(etudiant);
+            for(Paiement paiement : paiements){
+                montant += paiement.getMontant();
+                // montant = etudiantRepository.showStatus(etudiant.getId());
+                etudiant.setStatutPaiement(montant);
+            }
         }
 
         etudiantRepository.saveAll(etudiants);
@@ -87,10 +92,18 @@ public class EtudiantService
         return etudiants;
     }
 
-    public void createPaiement(Etudiant etudiant, Paiement paiement)
+    public void createPaiement(Long id, Paiement paiement)
     {
-        paiement.setEtudiant(etudiant);
-        paiementRepository.save(paiement);
+        // Etudiant etudiant =etudiantRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("Etudiant not found"));
+        Etudiant etudiant=etudiantRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("invallid etudiant Id:" + id));
+        Paiement newPaiement = new Paiement();
+        // newPaiement.setId(3L);
+        newPaiement.setNomBank(paiement.getNomBank());
+        newPaiement.setNumRecu(paiement.getNumRecu());
+        newPaiement.setDatePaiement(paiement.getDatePaiement());
+        newPaiement.setMontant(paiement.getMontant());
+        newPaiement.setEtudiant(etudiant);
+        paiementRepository.save(newPaiement);
 
         HistoriquePaiement historiquePaiement = new HistoriquePaiement();
         historiquePaiement.setEtudiant(etudiant);

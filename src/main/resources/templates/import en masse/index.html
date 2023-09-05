@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/a.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <title>imports</title>
+
+</head>
+
+<body>
+
+    <div id="top-button">
+        <button id="bt1" onclick="changebtn('bt1')">Import Notes</button>
+        <button id="bt2" onclick="changebtn('bt2')">Examens</button>
+        <button id="bt3">Annonymat</button>
+    </div>
+    <div id="container">
+        <div id="group1">
+            <div id="notes"></div>
+        </div>
+
+        <div id="group2">
+            <div id="import">
+                <button id="upload"><label for="file"><i class="bi bi-upload"></i> Upload</label></button>
+                <input id="file" class="input-file" accept=".xlsx " name="file" type="file" onchange="drad_and_drop()">
+            </div>
+            <div id="delete-block">
+                <button id="delete" onclick="del('notes')"><i class="bi bi-x-square-fill"></i></button>
+            </div>
+        </div>
+        <div id="consulting-block">
+            <form id="form2" method="post" th:action="@{/import}" onsubmit="return formulaire(event)"
+                enctype="multipart/form-data">
+                <input id="valider" type="submit" value="valider">
+            </form>
+        </div>
+
+    </div>
+
+    <div id="watch">
+        <table id="customers">
+            <tr>
+                <th>#Numero </th>
+                <th>Examen</th>
+                <th>Status</th>
+                <th>Progression</th>
+                <th>Date Evaluation </th>
+                <th>Action</th>
+            </tr>
+            <tr th:each="evaluation: ${evaluation}">
+                <!-- <tr th:each="part: ${part}"> -->
+                <td><span th:text="${evaluation.id}"></span></td>
+                <!-- <td>INF231_TP_S1_2023_30</td> -->
+                <td><span
+                        th:text="${evaluation.ue.code + '_' + evaluation.typeEval + '_S' + evaluation.semestre + '_' + #dates.format(evaluation.dateEval, 'yyyy') + '_'+evaluation.noteSur}"></span>
+                </td>
+                <td style="color: #50ac57; display: none;"><button id="check"><i
+                            class="bi bi-check"></i></button>Complete</td>
+                <td style="color: rgb(133, 29, 29);"><button id="no-check"><i class="bi bi-x"></i></button>Incomplete
+                </td>
+                <td>100/350</td>
+                <td><span th:text="${evaluation.dateEval}"></span></td>
+                <td><button id="eye" th:attr="onclick='eye(\'' + ${evaluation.typeEval} + '\', \'' + ${evaluation.ue.code} + '\')'"><i class="bi bi-eye"></i></button> <button id="trach"
+                        th:attr="onclick='verifier(\'' + ${evaluation.typeEval} + '\', \'' + ${evaluation.ue.code} + '\')'"><i
+                            class="bi bi-trash"></i></button> <button id="download"><i
+                            class="bi bi-download"></i></button> </td>
+                <!-- </tr> -->
+            </tr>
+            <!-- onclick="afficherMessage('${person.nom}', ${person.age})" -->
+        </table>
+        <div th:each="list: ${list}" style="display: none;" id="list">
+
+            <span th:text="${list}"></span>
+
+        </div >
+        
+    </div>
+    <div style="display: none;" id="data">
+        <table>
+            <tr>
+                <th>Matricule</th>
+                <th>Noms et Prenoms</th>
+                <th>Note</th>
+            </tr>
+            <tr  th:each="participes: ${participes}">
+                <td><span th:text="${participes.matricule}"></span></td>
+                <td><span th:text="${participes.nomEtudiant}"></span></td>
+                <td><span th:text="${participes.note}"></span></td>
+            </tr>
+        </table>
+    </div>
+
+
+
+</body>
+<script src="js/index.js"></script>
+<script src="js/xlsx.full.min.js"></script>
+
+</html>
