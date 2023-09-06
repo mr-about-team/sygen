@@ -8,6 +8,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 
 @Entity
@@ -19,6 +20,9 @@ public class Ue
     private String code;
     private String intitule;
     private int credit;
+
+	@ManyToOne
+    private Filiere filiere;
     
     @OneToMany(cascade = CascadeType.ALL)
     private List<PvUe> pvUe = new ArrayList<>();
@@ -61,5 +65,11 @@ public class Ue
 	}
 	public void setEvaluations(List<Evaluation> evaluations) {
 		this.evaluations = evaluations;
+	}
+	public Filiere getFiliere() {
+		return filiere;
+	}
+	public void setFiliere(Filiere filiere) {
+		this.filiere = filiere;
 	}
 }

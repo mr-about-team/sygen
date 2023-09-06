@@ -23,6 +23,9 @@ public class Filiere
     private List<Statut> statut;
     @OneToMany
     private List<Etudiant> etudiants;
+
+	@OneToMany
+    private List<Ue> ues;
 	
     
     public Long getId() {
@@ -54,5 +57,11 @@ public class Filiere
 	}
 	public void setEtudiants(List<Etudiant> etudiants) {
 		this.etudiants = etudiants;
+	}
+	public List<Ue> getUes() {
+		return ues;
+	}
+	public void setUes(List<Ue> ues) {
+		this.ues = ues;
 	}
 }

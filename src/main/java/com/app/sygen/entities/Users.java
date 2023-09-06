@@ -1,13 +1,10 @@
 package com.app.sygen.entities;
 
-import java.util.List;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 
 @Entity
@@ -22,16 +19,13 @@ public class Users
     private String password;
     private String nom;
     private String tel;
-    @OneToOne (mappedBy = "user")
+    @OneToOne
     private Enseignant enseignant;
-    @OneToOne (mappedBy = "user")
-
+    @OneToOne
     private Jury jury;
-    @OneToOne (mappedBy = "user")
+    @OneToOne
     private Assistant assistant;
 	
-	@OneToMany(mappedBy = "user")
-	private List<Participe> participes;
     
     public Long getId() {
 		return id;

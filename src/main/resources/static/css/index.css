@@ -1,0 +1,284 @@
+body{
+    background-color:#000000;
+    
+}
+
+#container{
+    margin-left: 10%;
+    padding: 0px;
+    width: 80%;
+    height: 800px;
+    border: #303133 solid 2px;
+    background-color: #303133;
+}
+
+
+#group1{
+    width: 100%;
+    height: 750px;
+    font-size: 2em;
+}
+
+#group2{
+    width: 100%;
+    height: 50px;
+    background-color:#000000;
+}
+
+
+#upload{
+    margin-top: 3px;
+    margin-left: 3px;
+    height: 44px;
+    width: 120px;
+    background-color:#29cf8f;
+    border-color:#29cf8f;
+    border-right: none;
+    position: absolute;
+    display: block;
+    color: white;
+}
+
+#upload1{
+    height: 44px;
+    width: 120px;
+    background-color:#563e92;
+    border-color:#563e92;
+    border-right: none;
+    position: absolute;
+    color: white;
+}
+
+
+
+
+.input-file{
+    display: none;
+}
+
+#delete{
+    height: 44px;
+    width: 44px;
+    border-right: none;
+    background-color: #303133;
+    border-color:#303133;
+    color: white;
+    float: right;
+    display: block;
+    margin-top: 3px;
+    margin-right: 3px;
+    border-radius: 4px;
+}
+
+
+#valider{
+    margin-top: 20px;
+    margin-left: 35%;
+    height: 44px;
+    width: 150px;
+    background-color:#563e92;
+    border-color:#563e92;
+    border-right: none;
+    position: absolute;
+    display: block;
+}
+
+#top-button{
+    margin-top: 10px;
+    margin-bottom: 10PX;
+    padding-left: 35%;
+}
+
+
+
+#bt1,#bt2,#bt3{
+    height: 44px;
+    width: 170px;
+    background-color:#563e92;
+    border-color:#563e92;
+    color: white;
+}
+#bt2, #bt3{
+    margin-left: 10px;
+    background-color:#303133;
+    border-color:#303133c1;
+}
+
+
+
+
+#customers {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 100px;
+
+}
+  
+#customers td, #customers th {
+  border: 1px solid #303133;
+  padding: 8px;
+  color: white;
+  text-align: center;
+}
+
+#customers tr:nth-child(even){background-color: #303133d4;}
+#customers tr:nth-child(odd){background-color: #303133;}
+
+#customers td:nth-child(4) {
+    padding-left: 20px;
+}
+
+/* #customers tr:hover {background-color: #303133;} */
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #373b3e;
+  color: white;
+  text-align: center;
+}
+
+#trach{
+    background-color: #573e92;
+    border-color: #573e92;
+    margin-left: 7px;
+}
+
+#download{
+    background-color: #e96265;
+    border-color: #e96265;
+    margin-left: 7px;
+    
+}
+
+#check{
+    background-color: #50ac57;
+    border-color: #50ac57;
+    margin-right: 10px;
+}
+
+#no-check{
+    background-color: #b53030;
+    border-color:#b53030;
+    margin-right: 10px;
+}
+
+#completed{
+    color: #50ac57;
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+  }
+
+  /* Style du texte du tooltip */
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  /* Affichage du tooltip au survol */
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+  }
+
+/* ************************media qwery******************************** */
+/* 
+@media (max-width: 1775px) {
+     #bt1{
+        margin-left:center;
+    } 
+       
+} */
+/* @media (max-width: 1360px) {
+    #top-button{
+        padding-left: 23%;
+    }
+       
+} */
+
+@media (max-width:1433px) {
+    #bt1{
+        margin-left: 30%;
+        }
+    
+}
+@media (max-width:1226px) {
+    #bt1{
+        margin-left: 27%;
+        }
+    
+}
+@media (max-width:1070px) {
+    #bt1{
+        margin-left: 25%;
+        }
+    
+}
+@media (max-width:975px) {
+    #bt1{
+        margin-left: 22%;
+        }
+    
+}
+@media (max-width:908px) {
+    #bt1{
+        margin-left: 20%;
+        }
+    
+}
+@media (max-width:875px) {
+    #bt1{
+        margin-left: 18%;
+        }
+    
+}
+@media (max-width:813px) {
+    #bt1{
+        margin-left: 16%;
+        }
+    
+}
+@media (max-width:781px) {
+    #bt1{
+        margin-left: 14%;
+        }
+    
+}
+@media (max-width:749px) {
+    #bt1{
+        margin-left: 12%;
+        }
+    
+}
+@media (max-width:722px) {
+    #bt1{
+        margin-left: 11.5%;
+        }
+    
+}
+@media (max-width:717px) {
+    #bt1{
+        margin-left: 11%;
+        }
+    
+}
+

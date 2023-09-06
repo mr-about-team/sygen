@@ -19,7 +19,7 @@ public class Paiement
     private String nomBank;
     private Date datePaiement;
     private String numRecu;
-    private float montant;
+    private Double montant;
     
     @ManyToOne
     private Etudiant etudiant;
@@ -49,10 +49,10 @@ public class Paiement
 	public void setNumRecu(String numRecu) {
 		this.numRecu = numRecu;
 	}
-	public float getMontant() {
+	public Double getMontant() {
 		return montant;
 	}
-	public void setMontant(float montant) {
+	public void setMontant(Double montant) {
 		this.montant = montant;
 	}
 	public Etudiant getEtudiant() {

@@ -22,7 +22,7 @@ public class Enseignant
     @ManyToMany
     private List<Ue> ues;
     @OneToOne
-    private User user;
+    private Users user;
 	
     
     public long getId() {
@@ -43,10 +43,10 @@ public class Enseignant
 	public void setUes(List<Ue> ues) {
 		this.ues = ues;
 	}
-	public User getUser() {
+	public Users getUser() {
 		return user;
 	}
-	public void setUser(User user) {
+	public void setUser(Users user) {
 		this.user = user;
 	}    
 }

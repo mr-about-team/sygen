@@ -11,7 +11,7 @@ import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "jury")
+//@Table(name = "jury")
 public class Jury 
 {
 	 @Id
@@ -21,7 +21,7 @@ public class Jury
     @ManyToMany
     private List<Statut> attribut;
     @OneToOne
-    private User user;
+    private Users user;
     
     
 	public long getId() {
@@ -36,10 +36,10 @@ public class Jury
 	public void setAttribut(List<Statut> attribut) {
 		this.attribut = attribut;
 	}
-	public User getUser() {
+	public Users getUser() {
 		return user;
 	}
-	public void setUser(User user) {
+	public void setUser(Users user) {
 		this.user = user;
 	}
 }
