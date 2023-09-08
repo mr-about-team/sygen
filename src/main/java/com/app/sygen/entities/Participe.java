@@ -22,8 +22,8 @@ public class Participe
     private String nomEtudiant;
     private Date dateImportation;
     
-    @ManyToOne
-    private User user;
+    @ManyToOne 
+    private Users user;
     @ManyToOne
     private Evaluation evaluation;
     @ManyToOne
@@ -66,10 +66,10 @@ public class Participe
 	public void setDateImportation(Date dateImportation) {
 		this.dateImportation = dateImportation;
 	}
-	public User getUser() {
+	public Users getUser() {
 		return user;
 	}
-	public void setUser(User user) {
+	public void setUser(Users user) {
 		this.user = user;
 	}
 	public Evaluation getEvaluation() {
