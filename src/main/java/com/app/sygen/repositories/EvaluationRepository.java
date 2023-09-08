@@ -24,5 +24,5 @@ public interface EvaluationRepository extends AppRepository<Evaluation, Long>
 	@Query("SELECT e FROM Evaluation e WHERE e.ue IN :ue")
 	List <Evaluation>  findByUe(List<Ue> ue);
 
-
+	Evaluation findByTypeEvalAndUe(String string, Ue findByCode);	
 }

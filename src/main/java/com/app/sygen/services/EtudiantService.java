@@ -247,13 +247,13 @@ public class EtudiantService
         List<Etudiant> etudiants = etudiantRepository.findAll();
 
         // Créer un nouveau classeur Excel
-        Workbook workbook = new XSSFWorkbook();
+         Workbook workbook = new XSSFWorkbook();
 
         // Créer une feuille de calcul
-        Sheet sheet = workbook.createSheet("person");
+         Sheet sheet = workbook.createSheet("person");
 
         // Créer une ligne pour les en-têtes de colonne
-        Row headerRow = sheet.createRow(0);
+         Row headerRow = sheet.createRow(0);
         headerRow.createCell(0).setCellValue("numero");
         headerRow.createCell(1).setCellValue("Matricule");
         headerRow.createCell(2).setCellValue("Nom et prenom");
@@ -285,7 +285,7 @@ public class EtudiantService
 
         // Écrire le classeur Excel dans un fichier
         try (OutputStream fileOut = outputStream) {
-            workbook.write(fileOut);
+             workbook.write(fileOut);
         }
 
         // Fermer le classeur Excel

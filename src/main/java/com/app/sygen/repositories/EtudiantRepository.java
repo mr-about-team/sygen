@@ -4,12 +4,9 @@ import java.util.List;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
-import org.springframework.stereotype.Repository;
-
 import com.app.sygen.entities.Etudiant;
 import com.app.sygen.entities.Filiere;
 
-@Repository
 public interface EtudiantRepository extends AppRepository<Etudiant, Long>
 {
 	/**
@@ -30,4 +27,9 @@ public interface EtudiantRepository extends AppRepository<Etudiant, Long>
 
     @Query(value = "SELECT SUM(p.Montant) FROM Paiement p WHERE p.etudiant.id = :idEtudiant", nativeQuery = true)
     Double showStatus(@Param("idEtudiant") Long idEtudiant);
+	List<Etudiant> findByFiliereAndStatutPaiementGreaterThanEqualOrderByNomAsc(Filiere filiere, Double statutPaiement);
+	List<Etudiant> findByFiliereAndStatutPaiementIgnoreCaseIsLessThanOrderByNomAsc(Filiere filiere, Double statutPaiement);
+	Etudiant findByFiliereAndMatricule(Filiere filiere, String matricule);
+
+	List<Etudiant> findByMatriculeOrderByNom(String matricule);
 }

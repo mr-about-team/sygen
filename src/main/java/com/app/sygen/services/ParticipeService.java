@@ -4,9 +4,10 @@ import java.time.LocalDate;
 import java.util.HashMap;
 import java.sql.Date;
 import java.text.ParseException;
+import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
-
 
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.CellType;
@@ -17,11 +18,16 @@ import org.springframework.stereotype.Service;
 import com.app.sygen.entities.Etudiant;
 import com.app.sygen.entities.Evaluation;
 import com.app.sygen.entities.Participe;
+import com.app.sygen.entities.PvCcData;
 import com.app.sygen.repositories.EtudiantRepository;
 import com.app.sygen.repositories.EvaluationRepository;
+import com.app.sygen.repositories.ParticipeRepository;
+import com.app.sygen.repositories.UeRepository;
 
 @Service
 public class ParticipeService {
+    @Autowired
+    private ParticipeRepository participeRepository;
 
     @Autowired
     private EvaluationRepository evaluationRepository;
@@ -29,6 +35,8 @@ public class ParticipeService {
     @Autowired
     private EtudiantRepository etudiantRepository;
 
+    @Autowired
+    private UeRepository ueRepository;
 
     public Participe createParticipeXLSX(Row row, Map<String, Integer> columnIndexMap,String code,String type,int noteSur) throws ParseException{
         LocalDate currentDate= LocalDate.now();
@@ -98,5 +106,23 @@ public class ParticipeService {
             columnIndex++;
         }
         return columnIndexMap;
+    }
+
+    public List<PvCcData> getPvCcData(){
+        
+        List<Participe> participes = participeRepository.findByAnneeImportationAndEvaluationOrderByNomEtudiantAsc("2023", evaluationRepository.findByTypeEvalAndUe("cc", ueRepository.findByCode("inf-242")));
+        
+        List<PvCcData> pvsCc = new ArrayList<PvCcData>();
+
+
+        for (Participe participe : participes) {
+            PvCcData pvCc = new PvCcData();
+
+            pvCc.setMatricule(participe.getMatricule());
+            pvCc.setNom(participe.getNomEtudiant());
+            pvCc.setNote(participe.getNote()+0.0);
+            pvsCc.add(pvCc);
+        }
+        return pvsCc;
     }
 }

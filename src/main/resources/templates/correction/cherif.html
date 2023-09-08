@@ -1,0 +1,55 @@
+<html xmlns="http://www.w3.org/1999/xhml" xmlns:th="http://www.thymeleaf.org"  >
+<head>
+    <meta charset="utf-8">
+    <title>Correction des notes</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <h1>Correction des notes</h1>
+    <form id="correctionForm" method="post" th:action="@{/update-note/{p.typeEval}/{p.oldMatricule}/{p.oldNomEtudiant}/{p.code}}" th:object="${param}" enctype="multipart/form-data">
+        <input type="hidden" name="_method" value="PUT" />
+        <div class="form-group">
+            <label for="typeEval">type de l'evaluation :</label>
+            <input type="text" id="typeEval" name="typeEval"th:field="${p.evaluation.typeEval}" required>
+        </div>
+        <div class="form-group">
+            <label for="oldMatricule">Ancien Matricule :</label>
+            <input type="text" id="oldMatricule" name="oldMatricule" th:field="${p.matricule} "  required>
+        </div>
+       
+        <div class="form-group">
+            <label for="oldNomEtudiant">ancien nom :</label>
+            <input type="text" id="oldNomEtudiant" name="oldNomEtudiant" th:field="${p.nomEtudiant}" required>
+        </div>
+        <div class="form-group">
+            <label for="code"> code de l'EU</label>
+            <input type="text" id="code" name="code" th:field="${p.evaluation.ue.code}" required>
+        </div>
+       
+       <!--- -----------------------------------                ---------------------> 
+       
+        <div class="form-group">
+            <label for="newMatricule">Nouveau Matricule :</label>
+            <input type="text" id="newMatricule" name="newMatricule" th:field="*{newMatricule} "  required>
+        </div>
+        <div class="form-group">
+            <label for="newNote">Nouvelle Note :</label>
+            <input type="number" id="newNote" name="newNote"th:field="*{newNote}" required>
+        </div>
+        <div class="form-group">
+            <label for="newNomEtudiant">Nouveau nom :</label>
+            <input type="text" id="newNomEtudiant" name="newNomEtudiant" th:field="*{newNomEtudiant}" required>
+        </div>
+        <div class="form-group">
+            <label for="newAnonymat"> newAnonymat</label>
+            <input type="number" id="newAnonymat" name="newAnonymat"  required>
+        </div>
+        <button type="submit">Mettre à jour </button>
+    </form>
+    <div id="message" class="message"></div>
+
+     <script src="script.js"></script> 
+</body>
+</html>
+
+

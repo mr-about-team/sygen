@@ -19,7 +19,7 @@ public class PvUe
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private int semestre;
-    private Date annee;
+    private String annee;
     
     @ManyToOne
     private Ue ue;
@@ -39,10 +39,10 @@ public class PvUe
 	public void setSemestre(int semestre) {
 		this.semestre = semestre;
 	}
-	public Date getAnnee() {
+	public String getAnnee() {
 		return annee;
 	}
-	public void setAnnee(Date annee) {
+	public void setAnnee(String annee) {
 		this.annee = annee;
 	}
 	public Ue getUe() {
@@ -57,4 +57,10 @@ public class PvUe
 	public void setListDetails(List<DetailPvUe> listDetails) {
 		ListDetails = listDetails;
 	}
+	public PvUe(int semestre, String annee, Ue ue) {
+		this.semestre = semestre;
+		this.annee = annee;
+		this.ue = ue;
+	}
+	
 }
